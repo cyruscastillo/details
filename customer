@@ -1,0 +1,22 @@
+class Person:
+    def __init__(self, name, address, age):
+        self.name=name
+        self.address=address
+        self.age=age
+    def display (self) :
+        print('Name : ' , self.name)
+        print('Address : ' , self.address)
+        print('Age : ' , self.age)
+
+class Customer (Person):
+     def __init__(self, name, address, age, item, price):
+         self.item=item
+         Person.__init__(self, name, address, age)
+         self.price=price
+     def display (self):
+        print('Item: ' , self.item)
+        Person.display(self)
+        print('Price : ' , self.price)
+c1=Customer('Alexis Castillo', 'Sta Teresita', 19, 'Alfonso', 280)
+print('Customer Details: ')
+c1.display()
